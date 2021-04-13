@@ -9,6 +9,7 @@ import DAO.HDVaydao;
 import entity.HDVay;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -61,9 +62,9 @@ public class UpdateControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        String ID = request.getParameter("sID");
+        String id = request.getParameter("sid");
         HDVaydao dao = new HDVaydao();
-        HDVay h = dao.getHDVaybyID(ID);
+        HDVay h = dao.getHDVaybyID(id);
         request.setAttribute("st", h);
         request.getRequestDispatcher("Update.jsp").
                 forward(request, response);
@@ -81,15 +82,15 @@ public class UpdateControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        String hID = request.getParameter("ID"); 
-        String hgoivay = request.getParameter("goivay"); 
-        String huserID = request.getParameter("userID");
-        String hngayvay = request.getParameter("ngayvay");
-        String hhan = request.getParameter("han");
+        int id = Integer.parseInt(request.getParameter("ID"));
+        int hgoivayid = Integer.parseInt(request.getParameter("goivay"));
+        int huserid = Integer.parseInt(request.getParameter("userID"));        
+            Date hngayvay = Date.valueOf(request.getParameter("ngayvay"));                 
+            Date hhan = Date.valueOf(request.getParameter("han"));       
         String htrangthai = request.getParameter("trangthai");
-        String htienvay = request.getParameter("tienvay");
+        float htienvay = Float.parseFloat(request.getParameter("tienvay"));
         HDVaydao dao = new HDVaydao();
-        dao.suaHD(hID, huserID, hgoivay, hngayvay, hhan, htrangthai, htienvay);
+        dao.suaHD(id, hgoivayid, huserid, hngayvay, hhan, htrangthai, htienvay);
         response.sendRedirect("load");
     }
 

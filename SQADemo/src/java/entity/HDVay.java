@@ -9,7 +9,7 @@ import java.sql.Date;
  * @author thuan
  */
 public class HDVay {
-    private int ID,goivayID,userID;
+    private int id,goivayID,userID;
     private Date Ngayvay,Han;
     private String Trangthai;
     private float TienVay;
@@ -27,8 +27,8 @@ public class HDVay {
     
     
 
-    public HDVay(int ID, int goivayID, int userID, Date Ngayvay, Date Han, String Trangthai, float TienVay) {
-        this.ID = ID;
+    public HDVay(int id, int goivayID, int userID, Date Ngayvay, Date Han, String Trangthai, float TienVay) {
+        this.id = id;
         this.goivayID = goivayID;
         this.userID = userID;
         this.Ngayvay = Ngayvay;
@@ -37,12 +37,12 @@ public class HDVay {
         this.TienVay = TienVay;
     }
 
-    public int getID() {
-        return ID;
+    public int getid() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setid(int id) {
+        this.id = id;
     }
 
     public int getGoivayID() {
@@ -95,7 +95,7 @@ public class HDVay {
 
     @Override
     public String toString() {
-        return "HDVay{" + "ID=" + ID + ", goivayID=" + goivayID + ", userID=" + userID + ", Ngayvay=" + Ngayvay + ", Han=" + Han + ", Trangthai=" + Trangthai + ", TienVay=" + TienVay + '}';
+        return "HDVay{" + "id=" + id + ", goivayID=" + goivayID + ", userID=" + userID + ", Ngayvay=" + Ngayvay + ", Han=" + Han + ", Trangthai=" + Trangthai + ", TienVay=" + TienVay + '}';
     }
 
 

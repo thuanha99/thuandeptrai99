@@ -4,6 +4,7 @@
     Author     : thuan
 --%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,16 +25,17 @@
                 </tr>
             <c:forEach items="${listH}" var="x">
                 <tr>
-                    <td>${x.ID}</td>
+                    <td>${x.id}</td>
                     <td>${x.goivayID}</td>
                     <td>${x.userID}</td>
-                    <td>${x.Ngayvay}</td>
-                    <td>${x.Han}</td>
-                    <td>${x.Trangthai}</td>
-                    <td>${x.TienVay}</td>
+                    <td>${x.ngayvay}</td>
+                    <td>${x.han}</td>
+                    <td>${x.trangthai}</td>
+                    <td>${x.tienVay}</td>
                     <td>
-                        <a href="update?sID=${x.ID}">Update</a>
-                        <a href="#" onclick="showMess(${x.ID})">Delete</a>
+                        <a href="update?sid=${x.id}">Update</a>
+                        <a href="#" onclick="showMess(${x.id})">Delete</a>
+<!--                        <a href="delete?sid=${x.id}">Delete</a>-->
                     </td>
                 </tr>
             </c:forEach>
@@ -42,10 +44,10 @@
             <a href="Add.jsp">Thêm mới hợp đồng vay</a>    
     </body>
     <script>
-        function showMess (ID){
-            var option = confirm('may muon xoa a ');
-            if(option === true ){
-                window.location.href = 'delete?sid'+ID;
+        function showMess(id){
+            var option = confirm('dit me may muon xoa a ');
+            if(option === true){
+                window.location.href = 'delete?sid=' + id;
             }
         }
             
