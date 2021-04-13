@@ -16,12 +16,12 @@
             <table border="1px solid black">
                 <tr>
                     <th>ID</th>
-                    <th>goivayID</th>
-                    <th>userID</th>
-                    <th>Ngayvay</th>
-                    <th>Han</th>
-                    <th>Trangthai</th>
-                    <th>TienVay</th>
+                    <th>Gói Vay ID</th>
+                    <th>user ID</th>
+                    <th>Ngày vay</th>
+                    <th>Hạn</th>
+                    <th>Trạng thái</th>
+                    <th>Tiền Vay</th>
                 </tr>
             <c:forEach items="${listH}" var="x">
                 <tr>
@@ -45,7 +45,7 @@
     </body>
     <script>
         function showMess(id){
-            var option = confirm('dit me may muon xoa a ');
+            var option = confirm('thich xoa khong?');
             if(option === true){
                 window.location.href = 'delete?sid=' + id;
             }

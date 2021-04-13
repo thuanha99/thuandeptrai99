@@ -10,17 +10,32 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Thêm Hợp Đồng Vay</title>
+        <script>
+            function check(){
+                a = document.them.goivay.value;
+                b = document.them.userID.value;
+                c = document.them.ngayvay.value;
+                d = document.them.han.value;
+                e = document.them.trangthai.value;
+                f = document.them.tienvay.value;
+                if(f<=0 || isNaN(f)){
+                    alert("Tiền vay phải là số dương");
+                    document.them.tienvay.focus();
+                    return false;
+                }
+                return true;              
+            }
+        </script>
     </head>
     <body>
-        <form action="add" method="post">
+        <form name="them" action="add" onsubmit="return check()" method="post">
             <table>
-                
                 <tr>
                     <td>Gói Vay</td>
                     <td>
-                        <input type="radio" name="goivay" value="1">Vay tin chap IT
-                        <input type="radio" name="goivay" value="2">Vay tin chap sinh vien
-                        <input type="radio" name="goivay" value="3">The chap nha
+                        <input type="radio" name="goivay" value="1" required>Vay tín chấp IT
+                        <input type="radio" name="goivay" value="2">Vay tín chấp sinh viên
+                        <input type="radio" name="goivay" value="3">Thế chấp nhà
                     </td>
                 </tr>
                 <tr>
@@ -42,7 +57,7 @@
                 </tr>
                 <td>Trạng thái</td>
                     <td>
-                        <input type="radio" name="trangthai" value="chua duyet">Chưa duyệt
+                        <input type="radio" name="trangthai" value="chua duyet" required>Chưa duyệt
                         <input type="radio" name="trangthai" value="da duyet">Đã duyệt                        
                     </td>
                 <tr>
@@ -53,7 +68,7 @@
                     </td>
                 </tr>    
                     <td></td>
-                    <td><button type="submit">Thêm mới</button></td>
+                    <td><input type="submit" value="Thêm mới"></td>
                 </tr>
             </table>
         </form>

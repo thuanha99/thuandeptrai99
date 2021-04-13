@@ -10,9 +10,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sửa hợp đồng vay</title>
+        <script>
+            function check(){
+                a = document.capnhat.goivay.value;
+                b = document.capnhat.userID.value;
+                c = document.capnhat.ngayvay.value;
+                d = document.capnhat.han.value;
+                e = document.capnhat.trangthai.value;
+                f = document.capnhat.tienvay.value;
+                if(f<=0 || isNaN(f)){
+                    alert("Tiền vay phải là số dương");
+                    document.capnhat.tienvay.focus();
+                    return false;
+                }
+                return true;              
+            }
+        </script>
     </head>
     <body>
-        <form action="update" method="post">
+        <form name="capnhat" action="update" onsubmit="return check()" method="post">
             <table>
                 <tr>
                     <td>ID</td>
@@ -58,7 +74,7 @@
                     </td>
                 </tr>    
                     <td></td>
-                    <td><button type="submit">Cập nhật</button></td>
+                    <td><input type="submit" value="Cập nhật"></td>
                 </tr>
             </table>
         </form>
