@@ -10,29 +10,29 @@ import java.sql.Date;
  */
 public class HDVay {
     private int id,goivayID,userID;
-    private Date Ngayvay,Han;
-    private String Trangthai;
-    private float TienVay;
+    private Date Ngayvay;
+    private String Trangthai,kiHan;
+    private double TienVay;
     
     public HDVay(){}
 
-    public HDVay(int goivayID, int userID, Date Ngayvay, Date Han, String Trangthai, float TienVay) {
+    public HDVay(int goivayID, int userID, Date Ngayvay, String kiHan, String Trangthai, double TienVay) {
         this.goivayID = goivayID;
         this.userID = userID;
         this.Ngayvay = Ngayvay;
-        this.Han = Han;
+        this.kiHan = kiHan;
         this.Trangthai = Trangthai;
         this.TienVay = TienVay;
     }
     
     
 
-    public HDVay(int id, int goivayID, int userID, Date Ngayvay, Date Han, String Trangthai, float TienVay) {
+    public HDVay(int id, int goivayID, int userID, Date Ngayvay, String kiHan, String Trangthai, double TienVay) {
         this.id = id;
         this.goivayID = goivayID;
         this.userID = userID;
         this.Ngayvay = Ngayvay;
-        this.Han = Han;
+        this.kiHan = kiHan;
         this.Trangthai = Trangthai;
         this.TienVay = TienVay;
     }
@@ -69,12 +69,12 @@ public class HDVay {
         this.Ngayvay = Ngayvay;
     }
 
-    public Date getHan() {
-        return Han;
+    public String getkiHan() {
+        return kiHan;
     }
 
-    public void setHan(Date Han) {
-        this.Han = Han;
+    public void setkiHan(String kiHan) {
+        this.kiHan = kiHan;
     }
 
     public String getTrangthai() {
@@ -85,17 +85,17 @@ public class HDVay {
         this.Trangthai = Trangthai;
     }
 
-    public float getTienVay() {
+    public double getTienVay() {
         return TienVay;
     }
 
-    public void setTienVay(float TienVay) {
+    public void setTienVay(double TienVay) {
         this.TienVay = TienVay;
     }
 
     @Override
     public String toString() {
-        return "HDVay{" + "id=" + id + ", goivayID=" + goivayID + ", userID=" + userID + ", Ngayvay=" + Ngayvay + ", Han=" + Han + ", Trangthai=" + Trangthai + ", TienVay=" + TienVay + '}';
+        return "HDVay{" + "id=" + id + ", goivayID=" + goivayID + ", userID=" + userID + ", Ngayvay=" + Ngayvay + ", kiHan=" + kiHan + ", Trangthai=" + Trangthai + ", TienVay=" + TienVay + '}';
     }
 
 

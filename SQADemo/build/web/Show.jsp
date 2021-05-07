@@ -13,13 +13,14 @@
         <title>Xem hợp đồng vay</title>
     </head>
     <body>
+        <h1>Giao diện xem hợp đồng vay</h1>
             <table border="1px solid black">
                 <tr>
                     <th>ID</th>
                     <th>Gói Vay ID</th>
                     <th>user ID</th>
                     <th>Ngày vay</th>
-                    <th>Hạn</th>
+                    <th>Kì Hạn</th>
                     <th>Trạng thái</th>
                     <th>Tiền Vay</th>
                 </tr>
@@ -29,23 +30,27 @@
                     <td>${x.goivayID}</td>
                     <td>${x.userID}</td>
                     <td>${x.ngayvay}</td>
-                    <td>${x.han}</td>
+                    <td>${x.kiHan}</td>
                     <td>${x.trangthai}</td>
                     <td>${x.tienVay}</td>
                     <td>
-                        <a href="update?sid=${x.id}">Update</a>
-                        <a href="#" onclick="showMess(${x.id})">Delete</a>
-<!--                        <a href="delete?sid=${x.id}">Delete</a>-->
+                        
+                        <button onclick="location.href='update?sid=${x.id}';">Update</button>                        
+                        <button onclick="showMess(${x.id})">Delete</button>
+                        
                     </td>
                 </tr>
             </c:forEach>
 
         </table>
-            <a href="Add.jsp">Thêm mới hợp đồng vay</a>    
+            
+            <button onclick="location.href='Add.jsp';">Thêm mới hợp đồng vay</button>
     </body>
     <script>
+
+        
         function showMess(id){
-            var option = confirm('thich xoa khong?');
+            var option = confirm('bạn chắc chắn muốn xóa ?');
             if(option === true){
                 window.location.href = 'delete?sid=' + id;
             }

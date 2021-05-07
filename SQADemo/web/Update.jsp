@@ -28,12 +28,13 @@
         </script>
     </head>
     <body>
+        <h1>Giao diện sửa hợp đồng</h1>
         <form name="capnhat" action="update" onsubmit="return check()" method="post">
             <table>
                 <tr>
                     <td>ID</td>
                     <td>
-                        <input value="${st.id}" type="text" name="ID" readonly>
+                        <input value="${st.id}" type="text" name="ID" style="background-color: grey;" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -57,26 +58,31 @@
                     
                 </tr>
                 <tr>
-                    <td></td>
-                    <label  for="han">Hạn </label>
-                    <input value="${st.han}" type="date" id="han" name="han">                    
+                <td>Kì Hạn</td>
+                    <td>
+                        <input type="radio" name="kiHan" value="3 thang" ${st.kiHan == "3 thang"?"checked":""}>3 tháng
+                        <input type="radio" name="kiHan" value="6 thang" ${st.kiHan == "6 thang"?"checked":""}>6 tháng                      
+                    </td>
                 </tr>
+                <tr>
                 <td>Trạng thái</td>
                     <td>
                         <input type="radio" name="trangthai" value="chua duyet" ${st.trangthai == "chua duyet"?"checked":""}>Chưa duyệt
                         <input type="radio" name="trangthai" value="da duyet" ${st.trangthai == "da duyet"?"checked":""}>Đã duyệt                        
                     </td>
-                <tr>
+                </tr>
                 <tr>
                     <td>Tiền vay</td>
                     <td>
                         <input value="${st.tienVay}" type="text" name="tienvay">
                     </td>
                 </tr>    
-                    <td></td>
+                    
                     <td><input type="submit" value="Cập nhật"></td>
                 </tr>
             </table>
+                
         </form>
+            <button onclick="location.href='/SQADemo/load';">Quay lại</button>
     </body>
 </html>

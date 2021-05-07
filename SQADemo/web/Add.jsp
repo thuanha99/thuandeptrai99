@@ -28,6 +28,7 @@
         </script>
     </head>
     <body>
+        <h1>Giao diện thêm mới hợp đồng vay</h1>
         <form name="them" action="add" onsubmit="return check()" method="post">
             <table>
                 <tr>
@@ -50,27 +51,29 @@
                     <input type="date" id="ngayvay" name="ngayvay" required>
                     
                 </tr>
-                <tr>
-                    <td></td>
-                    <label for="han">Hạn </label>
-                    <input type="date" id="han" name="han" required>                    
-                </tr>
+                <td>Kì Hạn</td>
+                    <td>
+                        <input type="radio" name="kiHan" value="3 thang" required>3 tháng
+                        <input type="radio" name="kiHan" value="6 thang">6 tháng                        
+                    </td>
+                    <tr>    
                 <td>Trạng thái</td>
                     <td>
                         <input type="radio" name="trangthai" value="chua duyet" required>Chưa duyệt
                         <input type="radio" name="trangthai" value="da duyet">Đã duyệt                        
                     </td>
-                <tr>
+                    </tr>
                 <tr>
                     <td>Tiền vay</td>
                     <td>
                         <input type="text" name="tienvay" required>
                     </td>
                 </tr>    
-                    <td></td>
+                    
                     <td><input type="submit" value="Thêm mới"></td>
                 </tr>
             </table>
+            <button onclick="location.href='/SQADemo/load';">Quay lại</button>
         </form>
     </body>
 </html>

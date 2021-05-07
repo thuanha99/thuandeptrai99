@@ -86,11 +86,11 @@ public class UpdateControl extends HttpServlet {
         int hgoivayid = Integer.parseInt(request.getParameter("goivay"));
         int huserid = Integer.parseInt(request.getParameter("userID"));        
             Date hngayvay = Date.valueOf(request.getParameter("ngayvay"));                 
-            Date hhan = Date.valueOf(request.getParameter("han"));       
+        String hkihan = request.getParameter("kiHan");       
         String htrangthai = request.getParameter("trangthai");
-        float htienvay = Float.parseFloat(request.getParameter("tienvay"));
+        double htienvay = Double.parseDouble(request.getParameter("tienvay"));
         HDVaydao dao = new HDVaydao();
-        dao.suaHD(id, hgoivayid, huserid, hngayvay, hhan, htrangthai, htienvay);
+        dao.suaHD(id, hgoivayid, huserid, hngayvay, hkihan, htrangthai, htienvay);
         response.sendRedirect("load");
     }
 

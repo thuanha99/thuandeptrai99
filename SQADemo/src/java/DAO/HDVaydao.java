@@ -32,9 +32,9 @@ public class HDVaydao extends connect{
                         rs.getInt(rs.findColumn("goivayID")), 
                         rs.getInt(rs.findColumn("userID")), 
                         rs.getDate(rs.findColumn("Ngayvay")), 
-                        rs.getDate(rs.findColumn("Han")), 
+                        rs.getString(rs.findColumn("kiHan")), 
                         rs.getString(rs.findColumn("Trangthai")),
-                        rs.getFloat(rs.findColumn("TienVay"))));
+                        rs.getDouble(rs.findColumn("TienVay"))));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -57,9 +57,9 @@ public class HDVaydao extends connect{
                         rs.getInt(2), 
                         rs.getInt(3), 
                         rs.getDate(4), 
-                        rs.getDate(5), 
+                        rs.getString(5), 
                         rs.getString(6), 
-                        rs.getFloat(7));
+                        rs.getDouble(7));
                 
             }
         } catch (SQLException e) {
@@ -69,16 +69,16 @@ public class HDVaydao extends connect{
     
 
     
-    public void suaHD(int id, int hgoivayid, int huserid, Date hngayvay, Date hhan, String htrangthai, float htienvay){
-        String sql = "UPDATE `bank`.`hopdongvay`SET `goivayID` = ?,`userID` = ?,`Ngayvay` = ?,`Han` = ?,`Trangthai` = ?,`TienVay` = ? WHERE `ID` = ?;";
+    public void suaHD(int id, int hgoivayid, int huserid, Date hngayvay, String hkihan, String htrangthai, double htienvay){
+        String sql = "UPDATE `bank`.`hopdongvay`SET `goivayID` = ?,`userID` = ?,`Ngayvay` = ?,`kiHan` = ?,`Trangthai` = ?,`TienVay` = ? WHERE `ID` = ?;";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, hgoivayid);
             ps.setInt(2, huserid);
             ps.setDate(3, hngayvay);
-            ps.setDate(4, hhan);
+            ps.setString(4, hkihan);
             ps.setString(5, htrangthai);
-            ps.setFloat(6, htienvay);
+            ps.setDouble(6, htienvay);
             ps.setInt(7, id);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -96,16 +96,16 @@ public class HDVaydao extends connect{
         }        
     }   
 
-    public void them(int hgoivayid, int huserid, Date hngayvay, Date hhan, String htrangthai, float htienvay) {
-        String sql = "INSERT INTO `bank`.`hopdongvay`(`goivayID`,`userID`,`Ngayvay`,`Han`,`Trangthai`,`TienVay`)VALUES(?,?,?,?,?,?);";
+    public void them(int hgoivayid, int huserid, Date hngayvay, String hkihan, String htrangthai, double htienvay) {
+        String sql = "INSERT INTO `bank`.`hopdongvay`(`goivayID`,`userID`,`Ngayvay`,`kiHan`,`Trangthai`,`TienVay`)VALUES(?,?,?,?,?,?);";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, hgoivayid);
             ps.setInt(2, huserid);
             ps.setDate(3, hngayvay);
-            ps.setDate(4, hhan);
+            ps.setString(4, hkihan);
             ps.setString(5, htrangthai);
-            ps.setFloat(6, htienvay);
+            ps.setDouble(6, htienvay);
             
             ps.executeUpdate();
         } catch (Exception e) {

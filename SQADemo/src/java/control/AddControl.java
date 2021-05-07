@@ -83,12 +83,12 @@ try {
         int hgoivayid = Integer.parseInt(request.getParameter("goivay"));
         int huserid = Integer.parseInt(request.getParameter("userID"));        
             Date hngayvay = Date.valueOf(request.getParameter("ngayvay"));                 
-            Date hhan = Date.valueOf(request.getParameter("han"));       
+            String hkihan = request.getParameter("kiHan");      
         String htrangthai = request.getParameter("trangthai");
         float htienvay = Float.parseFloat(request.getParameter("tienvay"));
         
         HDVaydao dao = new HDVaydao();
-        dao.them(hgoivayid, huserid, hngayvay, hhan, htrangthai, htienvay);
+        dao.them(hgoivayid, huserid, hngayvay, hkihan, htrangthai, htienvay);
         response.sendRedirect("load");
         }
 catch (Exception ex) {

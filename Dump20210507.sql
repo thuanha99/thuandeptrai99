@@ -57,15 +57,15 @@ CREATE TABLE `hopdongvay` (
   `goivayID` int NOT NULL,
   `userID` int NOT NULL,
   `Ngayvay` date DEFAULT NULL,
-  `Han` date DEFAULT NULL,
+  `kiHan` varchar(255) DEFAULT NULL,
   `Trangthai` varchar(255) DEFAULT NULL,
-  `TienVay` float DEFAULT NULL,
+  `TienVay` double DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FKhopdongvayAndGoivay` (`goivayID`),
   KEY `FKhopdongvayAndUser` (`userID`),
   CONSTRAINT `FKhopdongvayAndGoivay` FOREIGN KEY (`goivayID`) REFERENCES `goivay` (`ID`),
   CONSTRAINT `FKhopdongvayAndUser` FOREIGN KEY (`userID`) REFERENCES `user` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `hopdongvay` (
 
 LOCK TABLES `hopdongvay` WRITE;
 /*!40000 ALTER TABLE `hopdongvay` DISABLE KEYS */;
-INSERT INTO `hopdongvay` VALUES (1,1,2,'2021-02-04','2021-04-03','chua duyet',5000000),(2,1,3,'2021-01-03','2021-05-03','chua duyet',6000000),(3,3,2,'2020-04-03','2021-04-03','chua duyet',990000000);
+INSERT INTO `hopdongvay` VALUES (1,1,2,'2021-04-30','3 thang','chua duyet',452312),(3,3,2,'2020-04-03','6 thang','chua duyet',1.1200088),(7,2,2,'2021-01-01','3 thang','da duyet',1.2345678235),(8,2,3,'2021-01-03','6 thang','chua duyet',121212),(10,1,2,'2021-04-13','3 thang','da duyet',41414),(13,1,2,'2021-04-07','3 thang','chua duyet',1000000),(14,1,2,'2021-05-05','3 thang','chua duyet',2331);
 /*!40000 ALTER TABLE `hopdongvay` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-11  9:46:00
+-- Dump completed on 2021-05-07  7:35:43
