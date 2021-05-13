@@ -71,9 +71,9 @@
                 </tr>    
                     
                     <td><input type="submit" value="Thêm mới"></td>
-                </tr>
+                
             </table>
-            <button onclick="location.href='/SQADemo/load';">Quay lại</button>
+            
         </form>
     </body>
 </html>
